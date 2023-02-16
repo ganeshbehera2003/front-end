@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import './EventForm.css'; 
 import axios from "axios";
+import EventContext from "../../store/EventContext";
 
 const EventForm = (props) =>{
+    const EventCtx = useContext(EventContext);
 
     const [formInput,setFormInput] = useState({
         image:'',
@@ -61,10 +63,9 @@ const EventForm = (props) =>{
         });
     }
     // console.log(formInput);
-    const formSubmitHandler = (event)=>{
+    const formSubmitHandler = async(event)=>{
         // console.log(formInput);
-        saveNewEventData(formInput);
-        // props.onEventAdded(formInput);
+        await saveNewEventData(formInput);
         event.preventDefault();
     }
 
@@ -83,9 +84,8 @@ const EventForm = (props) =>{
                 'Content-Type':'application/json'
             },
             
-
         })
-    
+        EventCtx.setEvents([...EventCtx.events,eventData])
     }
 
     return(

@@ -1,7 +1,7 @@
 import React from "react";
 import './Event.css'
 
-function Event(props){
+export const Event=(props)=>{
     return (
         <div>
             <div className="event_container">
@@ -14,6 +14,7 @@ function Event(props){
                     <div className="start_date">{props.start_date}</div>
                     <div className="end_date">{props.end_date}</div>
                 </div>
+                <div className="event_place">{props.place}</div>
                 <div className="button-container">
                     <button className="Register">Register</button>
                 </div>
@@ -21,4 +22,3 @@ function Event(props){
         </div>
     );
 }
-export default Event;
