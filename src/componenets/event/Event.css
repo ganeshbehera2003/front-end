@@ -1,0 +1,32 @@
+.event_container{
+    width: 10%;
+    float: left;
+    margin: 20px 10px;
+    box-shadow: 10px 10px 10px 10px #ccc;
+    padding: 15px;
+}
+.event_image img{
+    width:100%;
+}
+.event_image{
+    width: 100%;
+}
+.event_price{
+    font-weight: bold;
+    font-size: 16px;
+    width:50%;
+    float: left;
+}
+.date{
+    float:left;
+    text-align: right   ;
+    width:50%;
+    font-size: 16px;
+    font-weight: bold;
+}
+.event_name{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+}
